@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 25px;
+}
+
+[class ^= "box-"] {
+  display: grid;
+  place-items: center;
+  border: 5px solid red;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(256, 256, 256, 0.7);
+  color: #fff;
+}
+
+body {
+  background: blue;
+  height: 100vh;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  text-decoration: underline;
+  color: white;
+  text-transform: uppercase;
+}
+
+hr {
+  margin: 3.5rem 5% 2rem;
+}
+
+
+/* Beginner */
+.beginner {
+  height: 90vh;
+  width: 90%;
+  margin: 20px auto;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 20px;
+}
+
+
+/* Beginner Plus */
+.beginner-plus {
+  height: 90vh;
+  width: 90%;
+  margin: 20px auto;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+.beginner-plus > .box-1 {
+  grid-column: span 2;
+}
+.beginner-plus > .box-2 {
+  grid-column: span 6;
+}
+.beginner-plus > .box-3 {
+  grid-column: span 4;
+}
+
+
+/* Intermediate */
+.intermediate {
+  height: 90vh;
+  width: 90%;
+  margin: 20px auto;
+
+  display: grid;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .intermediate {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr 0.8fr 3fr 0.8fr 1fr;
+  }
+  .intermediate > .box-1 {
+    grid-column: 1 / 13;
+  }
+  .intermediate > .box-2 {
+    grid-column: 1 / 13;
+  }
+  .intermediate > .box-3 {
+    grid-column: 1 / 13;
+  }
+  .intermediate > .box-4 {
+    grid-column: 1 / 7;
+  }
+  .intermediate > .box-5 {
+    grid-column: 7 / 13;
+  }
+  .intermediate > .box-6 {
+    grid-column: 1 / 13;
+  }
+}
+@media (min-width: 1080px) {
+  .intermediate {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr 4fr 1fr;
+  }
+  .intermediate > .box-1 {
+    grid-column: 1 / 13;
+  }
+  .intermediate > .box-2 {
+    grid-column: 11 / 13;
+    grid-row: 2 / 4;
+  }
+  .intermediate > .box-3 {
+    grid-column: 4 / 11;
+    grid-row: 2 / 4;
+  }
+  .intermediate > .box-4 {
+    grid-column: 1 / 6;
+  }
+  .intermediate > .box-5 {
+    grid-column: 1 / 4;
+    grid-row: 2 / 4;
+  }
+  .intermediate > .box-6 {
+    grid-column: 6 / 13;
+  }
+}
+
+
+/* Pro */
+.pro {
+  height: 90vh;
+  width: 90%;
+  margin: 20px auto;
+
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas:
+    "h h h h h h h h h h h h"
+    "b b b b b b b b b b b b"
+    "m m m m m m m m m m m m"
+    "s s s s s s s s s s s s"
+    "f f f f f f f f f f f f"
+  ;
+}
+.pro .box-1 {
+  grid-area: h;
+}
+.pro .box-2 {
+  grid-area: b;
+}
+.pro .box-3 {
+  grid-area: m;
+}
+.pro .box-4 {
+  grid-area: s;
+}
+.pro .box-5 {
+  grid-area: f;
+}
+
+@media (min-width: 768px) {
+  .pro {
+    height: 90vh;
+    width: 90%;
+    margin: 20px auto;
+
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "h h h h h h h h h h h h"
+      "b b b b m m m m m m m m"
+      "b b b b m m m m m m m m"
+      "s s s s m m m m m m m m"
+      "s s s s f f f f f f f f"
+    ;
+  }
+}
+@media (min-width: 1080px) {
+  .pro {
+    height: 90vh;
+    width: 90%;
+    margin: 20px auto;
+
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "h h h h h h h h h h h h"
+      "b b m m m m m m m m s s"
+      "b b m m m m m m m m s s"
+      "b b m m m m m m m m s s"
+      "f f f f f f f f f f s s"
+    ;
+  }
+}
+
+
+/* Master */
+.master-container img {
+  width: 180px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.simpson-img {
+  text-align: center;
+}
+
+.master-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.card .simpson-info {
+  background: darkblue;
+  width: 100%;
+  border-radius: 20px;
+  padding: 15px;
+  color:#fff;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 3fr;
+}
+
+.name-label,
+.bio-label {
+  text-transform: uppercase;
+}
+
+.bio-label,
+.simpson-bio {
+  margin-top: 15px;
+}
